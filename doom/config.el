@@ -74,5 +74,15 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+;; Define pytest como test runner do python
 (after! python
   (setq python-test-runner 'pytest))
+
+;; Autocompletes no org mode
+(after! org
+  (set-company-backend! 'org-mode
+    '(:separate company-capf company-yasnippet)))
+
+(after! yasnippet
+  (yas-reload-all))
