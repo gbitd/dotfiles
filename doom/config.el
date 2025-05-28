@@ -86,3 +86,6 @@
 
 (after! yasnippet
   (yas-reload-all))
+
+;; Define o dicionário padrão
+(setq ispell-dictionary "brazilian")
