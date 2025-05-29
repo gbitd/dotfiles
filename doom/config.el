@@ -89,3 +89,11 @@
 
 ;; Define o dicionário padrão
 (setq ispell-dictionary "brazilian")
+;; Alternar entre dicionários com F7
+(defun switch-dictionary()
+  (interactive)
+  (let* ((dic ispell-current-dictionary)
+         (change (if (string= dic "brazilian") "english" "brazilian")))
+    (ispell-change-dictionary change)
+    (message "Dicionário alterado para: %s" change)))
+(global-set-key (kbd "<f7>") 'switch-dictionary)
